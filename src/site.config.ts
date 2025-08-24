@@ -2,14 +2,14 @@ import type { SiteConfig } from '~/types'
 
 const config: SiteConfig = {
   // Absolute URL to the root of your published site, used for generating links and sitemaps.
-  site: 'https://multiterm.stelclementine.com',
+  site: 'https://keplerplanetgame.com',
   // The name of your site, used in the title and for SEO.
   title: 'Kepler Planet',
   // The description of your site, used for SEO and RSS feed.
   description:
     'A coder-ready Astro blog theme with 59 of your favorite color schemes to choose from',
   // The author of the site, used in the footer, SEO, and RSS feed.
-  author: 'Katy Kookaburra',
+  author: 'Kepler Planet',
   // Keywords for SEO, used in the meta tags.
   tags: ['Astro', 'Terminal', 'Theme', 'MultiTerm', 'stelcodes'],
   // Path to the image used for generating social media previews.
@@ -42,7 +42,7 @@ const config: SiteConfig = {
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/stelcodes/multiterm-astro',
+      url: 'https://github.com/HRGopher/KeplerPlanetBlog',
       external: true,
     },
   ],
@@ -151,7 +151,7 @@ const config: SiteConfig = {
   },
   // Social links to display in the footer.
   socialLinks: {
-    github: 'https://github.com/stelcodes/multiterm-astro',
+    github: 'https://github.com/HRGopher/KeplerPlanetBlog',
     mastodon: 'https://github.com/stelcodes/multiterm-astro',
     email: 'https://github.com/stelcodes/multiterm-astro',
     linkedin: 'https://github.com/stelcodes/multiterm-astro',
@@ -166,10 +166,10 @@ const config: SiteConfig = {
   // IMPORTANT: Update giscus.json in the root of the project with your own website URL
   // If you don't want to use Giscus, set this to undefined.
   giscus: {
-    repo: 'stelcodes/multiterm-astro',
-    repoId: 'R_kgDOPNnBig',
-    category: 'Giscus',
-    categoryId: 'DIC_kwDOPNnBis4CteOc',
+    repo: 'HRGopher/KeplerPlanetBlog',
+    repoId: 'R_kgDOPjTxFg',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOPjTxFs4CuiKj',
     reactionsEnabled: true, // Enable reactions on post itself
   },
   // These are characters available for the character chat feature.
@@ -177,9 +177,9 @@ const config: SiteConfig = {
   // Make sure to compress the image to a web-friendly size (<100kb)
   // Try using the excellent https://squoosh.app web app for creating small webp files
   characters: {
-    owl: '/owl.webp',
-    unicorn: '/unicorn.webp',
-    duck: '/duck.webp',
+    owl: '',
+    unicorn: '',
+    duck: '',
   },
 }
 

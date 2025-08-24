@@ -1,6 +1,6 @@
 ---
 title: 'Error Handling in Go'
-published: 2025-07-08
+
 draft: false
 description: 'Understand how to handle errors effectively in Go.'
 tags: ['go']

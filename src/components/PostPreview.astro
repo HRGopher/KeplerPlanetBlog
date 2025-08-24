@@ -20,8 +20,9 @@ if (post.data.tags && post.data.tags.length > 0) {
   const tagsGroup = await TagsGroup.build()
   tags = tagsGroup.matchMany(post.data.tags)
 }
-const samePage = Astro.url.pathname === `/posts/${post.id}`
-const articleLink = samePage ? `#${post.id}` : `/posts/${post.id}`
+const id = post.id.replace(/\/index$/, '')
+const samePage = Astro.url.pathname === `/posts/${id}`
+const articleLink = samePage ? `#${id}` : `/posts/${id}`
 ---
 
 <article class="w-full py-5 my-1 md:my-4 border-accent/10">

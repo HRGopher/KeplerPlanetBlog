@@ -218,7 +218,7 @@ export async function getSortedPosts() {
     return import.meta.env.PROD ? data.draft !== true : true
   })
   const sortedPosts = allPosts.sort((a, b) => {
-    return a.data.published < b.data.published ? -1 : 1
+    return a.id < b.id ? -1 : 1
   })
   return sortedPosts
 }
@@ -246,8 +246,8 @@ abstract class PostsCollationGroup implements CollationGroup<'posts'> {
 
   sortCollationsMostRecent(): Collation<'posts'>[] {
     this.collations.sort((a, b) => {
-      const aDate = a.entries[a.entries.length - 1].data.published
-      const bDate = b.entries[b.entries.length - 1].data.published
+      const aDate = a.entries[a.entries.length - 1].id
+      const bDate = b.entries[b.entries.length - 1].id
       return aDate < bDate ? 1 : -1
     })
     return this.collations

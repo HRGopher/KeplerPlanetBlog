@@ -92,14 +92,21 @@ export async function GET(context: APIContext) {
 export async function getStaticPaths() {
   const posts = await getSortedPosts()
   return posts
-    .map((post) => ({
-      params: { slug: post.id },
-      props: {
-        pubDate: post.data.published ? dateString(post.data.published) : undefined,
-        title: post.data.title,
-        author: post.data.author || siteConfig.author,
-      },
-    }))
+    .map((post) => {
+      const dateMatch = post.id.match(/(\d{4})\/(\d{2})\/(\d{2})/)
+      let pubDate: string | undefined
+      if (dateMatch) {
+        pubDate = dateString(new Date(parseInt(dateMatch[1]), parseInt(dateMatch[2]) - 1, parseInt(dateMatch[3])))
+      }
+      return {
+        params: { slug: post.id },
+        props: {
+          pubDate: pubDate,
+          title: post.data.title,
+          author: post.data.author || siteConfig.author,
+        },
+      }
+    })
     .concat([
       {
         params: { slug: '__default' },

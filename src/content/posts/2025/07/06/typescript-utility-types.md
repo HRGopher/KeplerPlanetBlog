@@ -1,6 +1,6 @@
 ---
 title: 'TypeScript Utility Types'
-published: 2025-07-06
+
 draft: false
 description: 'Explore the built-in utility types in TypeScript and how to use them.'
 tags: ['typescript']

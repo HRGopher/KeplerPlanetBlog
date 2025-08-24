@@ -11,6 +11,11 @@ interface Props {
 const { post, class: className } = Astro.props
 const { remarkPluginFrontmatter } = await render(post)
 const { minutesRead } = remarkPluginFrontmatter
+const dateMatch = post.id.match(/(\d{4})\/(\d{2})\/(\d{2})/)
+let date: Date | undefined
+if (dateMatch) {
+  date = new Date(parseInt(dateMatch[1]), parseInt(dateMatch[2]) - 1, parseInt(dateMatch[3]))
+}
 const seriesFrontmatter = post.data.series
 let series: Collation<'posts'> | undefined
 let seriesPostNumber: number | undefined
@@ -42,7 +47,7 @@ if (seriesFrontmatter) {
       )
     }
     <div class="shrink-0 pl-0.5 text-[17px] sm:text-base">
-      <time>{dateString(post.data.published)}</time>
+      {date && <time>{dateString(date)}</time>}
       {
         post.data.author && (
           <span class="before:content-['·'] before:font-bold before:inline-block before:mx-0.5">
